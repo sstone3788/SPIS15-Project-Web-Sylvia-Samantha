@@ -1,0 +1,13 @@
+{% extends "welcome.html" %}
+
+{% block title %}Main{% endblock %}
+
+{% block content %}
+  <h1>Main</h1>
+<p>Hi! Welcome to Yur Mum's site!</p>
+
+<img src="{{ url_for('static', filename='mum' +mumnum+'.png') }}"> 
+
+
+
+{% endblock %}
