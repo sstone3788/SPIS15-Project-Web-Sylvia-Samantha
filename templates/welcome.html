@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+  <h1>Welcome</h1>
+<p>Congrats! This is your new mum. You chose mum number {{ mumnum }} </p>
+<p> To do: get the mom variable from the url and use it to choose which picture to show. </p>
+<img src="{{ url_for('static', filename='mum' +mumnum+'.png') }}"
+
+{% endblock %}

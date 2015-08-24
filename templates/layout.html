@@ -1,21 +1,12 @@
 <!doctype html>
 <html>
-<body>
-<table>
-<tr>
-<td>First mom goes here</td>
-<td>Second mom goes here</td>
-<td>Third mom goes here</td>
-<td>Fourth mom goes here</td>
-<td>Fifth mom goes here</td>
-  
-  
-</tr>  
-  
-</table>  
-  
-  
-</body>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <title>{% block title %}{% endblock %} - Yur Mum</title>
+</head>
 
+<body>
+ <div id="content">{% block content %}{% endblock %}</div>
+</body>
 
 </html>
