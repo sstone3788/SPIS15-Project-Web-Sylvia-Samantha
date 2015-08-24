@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+  <h1>Welcome</h1>
+<p>Congrats! This is your new mum. You chose mum number {{ mumnum }} </p>
+
+<img src="{{ url_for('static', filename='mum' +mumnum+'.png') }}"> 
+<p>
+<form action="/main/<mumnum>">
+<input type="submit" value="Continue">
+</form>
+
+{% endblock %}

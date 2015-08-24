@@ -1,7 +1,26 @@
-from flask import Flask
+
+from flask import Flask, url_for, render_template, request
+
 app = Flask(__name__)
 
-@app.route("/")
+@app.route('/')
+def renderMain():
+    return render_template('home.html')
+
+@app.route('/welcome/<mumnum>')
+def welcome(mumnum):
+	return render_template('welcome.html', mumnum=mumnum)
+
+
+    
+if __name__=="__main__":
+    app.run(debug=False,host="0.0.0.0",port=54321)
+
+
+
+
+
+@app.route("/mum")
 def mum():
     return "Hello World! :) This is Sylvia and Samantha from your mum"
 
@@ -79,8 +98,7 @@ def momanswers (q):
     return "Yassss" 
 
 
-if __name__=="__main__":
-    app.run(port=5100)
+
 
 ##+ (a+b)
 
