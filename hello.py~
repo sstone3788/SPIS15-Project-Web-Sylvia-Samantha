@@ -11,10 +11,6 @@ def renderMain():
 def welcome(mumnum):
 	return render_template('welcome.html', mumnum=mumnum)
 
-@app.route('/main/<mumnum>')
-def main(mumnum):
-	return render_template('main.html', mumnum=mumnum)
-
 
     
 if __name__=="__main__":
