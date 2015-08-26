@@ -26,7 +26,7 @@ if __name__=="__main__":
 
 @app.route("/mum")
 def mum():
-    return "Hello World! :) This is Sylvia and Samantha from your mum"
+    return "Hello World! :) This is Sylvia and Samantha from your mum!"
 
 def ftoc(ftemp):
    return (ftemp-32.0)*(5.0/9.0)
