@@ -1,0 +1,31 @@
+{% extends "tools.html" %}
+
+{% block title %}Farenheit Converter{% endblock %}
+
+{% block content %}
+  <h1>Farenheit Converter</h1>
+<p>Yur Mum can convert </p>
+
+<img src="{{ url_for('static', filename='mum' +mumnum+'.png') }}"> 
+
+<p> Enter Temperature in degrees Farenheit </p>
+<input type="number" id="myNumber" value="0">
+<button onclick="myFunction()">MAGIC!</button>
+
+<p id="degree"></p>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("mydegree").value;
+    document.getElementById("degree").innerHTML = x;
+}
+</script>
+
+
+
+
+
+
+
+
+{% endblock %}

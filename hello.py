@@ -15,8 +15,42 @@ def welcome(mumnum):
 def main(mumnum):
 	return render_template('main.html', mumnum=mumnum)
 
+@app.route('/tools/<mumnum>')
+def tools(mumnum):
+	return render_template('tools.html', mumnum=mumnum)
+
+@app.route('/ftoc/<mumnum>')
+def ftoc(mumnum):
+	return render_template('ftoc.html', mumnum=mumnum)
+
+@app.route('/ftocanswer/<mumnum>')
+def ftocanswer(mumnum):
+	return render_template('ftocanswer.html' , mumnum=mumnum)
+
+def ftoc(ftemp):
+   return (ftemp-32.0)*(5.0/9.0)
+
+@app.route('/ftoc/<ftempString>')
+def convertFtoC(ftempString):
+    ftemp = 0.0
+    try:
+        ftemp = float(ftempString)
+        ctemp = ftoc(ftemp)
+        return "In Farenheit: " + ftempString + " In Celsius " + str(ctemp) 
+    except ValueError:
+        return "Sorry.  Could not convert " + ftempString + " to a number"
+
+
+
+
+
+
 
     
+
+
+
+
 if __name__=="__main__":
     app.run(debug=False,host="0.0.0.0",port=54321)
 

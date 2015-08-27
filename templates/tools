@@ -1,0 +1,10 @@
+{% extends "main.html" %}
+
+{% block title %}Tools{% endblock %}
+
+{% block content %}
+  <h1>Tools</h1>
+<p>Here's some tools yur mum can help you with.</p>
+
+<img src="{{ url_for('static', filename='mum' +mumnum+'.png') }}"> 
+

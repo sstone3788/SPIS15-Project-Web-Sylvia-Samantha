@@ -6,8 +6,11 @@
   <h1>Main</h1>
 <p>Hi! Welcome to Yur Mum's site!</p>
 
-<img src="{{ url_for('static', filename='mum '+mumnum+'.png') }}"> 
+<img src="{{ url_for('static', filename='mum' +mumnum+'.png') }}"> 
+<a href=
 
-
+<form action="/tools/{{ mumnum }}">
+<input type="submit" value="Yur Mum's Tools">
+</form>
 
 {% endblock %}
