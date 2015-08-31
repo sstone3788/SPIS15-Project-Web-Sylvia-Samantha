@@ -8,8 +8,13 @@
 
 <img src="{{ url_for('static', filename='mum' +mumnum+'.png') }}"> 
 
+
 <form action="/ftoc/{{ mumnum }}">
-<input type="submit" value="Yur Mum's Tools">
+<input type="submit" value="Farenheit to Celcius">
+</form>
+<br>
+<form action="/ctof/{{ mumnum }}">
+<input type="submit" value= "Celcius to Farenheit">
 </form>
 
 

@@ -23,6 +23,22 @@ def tools(mumnum):
 def ftoc(mumnum):
 	return render_template('ftoc.html', mumnum=mumnum)
 
+@app.route('/ctof/<mumnum>')
+def ctof(mumnum):
+	return render_template('ctof.html', mumnum=mumnum)
+
+@app.route('/games/<mumnum>')
+def games(mumnum):
+	return render_template('games.html', mumnum=mumnum)
+
+@app.route('/songs/<mumnum>')
+def songs(mumnum):
+	return render_template('songs.html', mumnum=mumnum)
+
+@app.route('/movies/<mumnum>')
+def movies(mumnum):
+	return render_template('movies.html', mumnum=mumnum)
+
 @app.route('/ftocanswer/<mumnum>')
 def ftocanswer(mumnum):
 	return render_template('ftocanswer.html' , mumnum=mumnum)
@@ -144,3 +160,4 @@ def momanswers (q):
 ###
 
     
+
