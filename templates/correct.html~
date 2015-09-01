@@ -1,0 +1,17 @@
+{% extends "games.html" %}
+
+{% block title %}Correct{% endblock %}
+
+{% block content %}
+  <h1>Correct!</h1>
+<p>You are correct! Yur Mum is so proud!</p>
+
+<img src="{{ url_for('static', filename='mum' +mumnum+'.png') }}"> 
+<form action="/main/{{ mumnum }}">
+<input type="submit" value="Keep Playing!">
+</form>
+<form action="/games/{{ mumnum }}">
+<input type="submit" value="Back to Games">
+</form>
+
+{% endblock %}

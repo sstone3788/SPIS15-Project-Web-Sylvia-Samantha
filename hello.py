@@ -21,6 +21,7 @@ def tools(mumnum):
 
 @app.route('/ftoc/<mumnum>')
 def ftoc(mumnum):
+	print "I am in /ftoc/<mumnum>"
 	return render_template('ftoc.html', mumnum=mumnum)
 
 @app.route('/ctof/<mumnum>')
@@ -39,22 +40,41 @@ def songs(mumnum):
 def movies(mumnum):
 	return render_template('movies.html', mumnum=mumnum)
 
-@app.route('/ftocanswer/<mumnum>')
-def ftocanswer(mumnum):
-	return render_template('ftocanswer.html' , mumnum=mumnum)
+@app.route('/quotes/<mumnum>')
+def quotes(mumnum):
+	return render_template('quotes.html', mumnum=mumnum)
+
+@app.route('/correct/<mumnum>')
+def correct(mumnum):
+	return render_template('correct.html', mumnum=mumnum)
+
+@app.route('/incorrect/<mumnum>')
+def incorrect(mumnum):
+	return render_template('incorrect.html', mumnum=mumnum)
+
 
 def ftoc(ftemp):
    return (ftemp-32.0)*(5.0/9.0)
 
-@app.route('/ftoc/<ftempString>')
-def convertFtoC(ftempString):
+
+@app.route('/ftocanswer/<mumnum>', methods=["POST"])
+def ftocanswer(mumnum):
+    print "I am in /ftocanswer/<mumnum>"
     ftemp = 0.0
     try:
-        ftemp = float(ftempString)
+        ftemp = float(request.form["ftempString"])
         ctemp = ftoc(ftemp)
-        return "In Farenheit: " + ftempString + " In Celsius " + str(ctemp) 
+        message= "In Farenheit: " + request.form["ftempString"] + " In Celsius " + str(ctemp) 
+	return render_template('ftocanswer.html' , mumnum=mumnum, message=message)
     except ValueError:
-        return "Sorry.  Could not convert " + ftempString + " to a number"
+        
+	return render_template('ftocanswer.html' , mumnum=mumnum, message="Sorry, Yur Mum could not convert.")
+
+
+
+
+
+   
 
 
 
@@ -78,18 +98,9 @@ if __name__=="__main__":
 def mum():
     return "Hello World! :) This is Sylvia and Samantha from your mum!"
 
-def ftoc(ftemp):
-   return (ftemp-32.0)*(5.0/9.0)
 
-@app.route('/ftoc/<ftempString>')
-def convertFtoC(ftempString):
-    ftemp = 0.0
-    try:
-        ftemp = float(ftempString)
-        ctemp = ftoc(ftemp)
-        return "In Farenheit: " + ftempString + " In Celsius " + str(ctemp) 
-    except ValueError:
-        return "Sorry.  Could not convert " + ftempString + " to a number"
+
+
 
 @app.route('/urmum')
 def urmum():

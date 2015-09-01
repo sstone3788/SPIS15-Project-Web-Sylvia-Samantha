@@ -1,0 +1,13 @@
+{% extends "games.html" %}
+
+{% block title %}Incorrect{% endblock %}
+
+{% block content %}
+  <h1>Incorrect</h1>
+<p>You are incorrect. Yur Mum is a little disappointed, but you can try again!</p>
+
+<img src="{{ url_for('static', filename='mum' +mumnum+'.png') }}"> 
+
+<FORM><INPUT Type="button" VALUE="Try Again" onClick="history.go(-1);return true;"></FORM>
+
+{% endblock %}

@@ -5,11 +5,32 @@
 {% block content %}
   <h1>Games</h1>
 <p>Guess Yur Mum's favorite movies!</p>
-
+<br>Yur Mum loves these scenes! Can you guess what movie they are from? <br>
 <img src="{{ url_for('static', filename='mum' +mumnum+'.png') }}"> 
 
 
-
+<form>
+  <input type="radio" name="movie" value="Titanic" > Titanic
+  <br>
+  <input type="radio" name="movie" value="Sound of Music"> Sound of Music
+<br>
+  <input type="radio" name="movie" value="Lion King" > Lion King
+  <br>
+  <input type="radio" name="movie" value="Pinocchio"> Pinocchio
+<br>
+  <input type="radio" name="movie" value="Up" > Up
+  <br>
+  <input type="radio" name="movie" value="Terminator"> Terminator
+<br>
+  <input type="radio" name="movie" value="Fifty Shades of Grey" > Fifty Shades of Grey
+  <br>
+  <input type="radio" name="movie" value="The Princess Diaries"> The Princess Diaries
+<br>
+ <input type="radio" name="movie" value="The Breakfast Club" > The Breakfast Club
+  <br>
+  <input type="radio" name="movie" value="Mean Girls"> Mean Girls
+</form> 
+<input type="submit" value= "Do you really know Yur Mum?">
 
 
 

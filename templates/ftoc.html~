@@ -9,18 +9,16 @@
 <img src="{{ url_for('static', filename='mum' +mumnum+'.png') }}"> 
 
 
+
 <p> Enter Temperature in degrees Farenheit </p>
-<input type="number" id="myNumber" value="0">
-<button onclick="myFunction()">MAGIC!</button>
+<form action="/ftocanswer/{{ mumnum }}">
+<input type="number" name="ftempString" value="0">
+<br>
+<input type="submit" value="Yur Mum's Magic">
+</form>
 
-<p id="degree"></p>
 
-<script>
-function myFunction() {
-    var x = document.getElementById("mydegree").value;
-    document.getElementById("degree").innerHTML = x;
-}
-</script>
+
 
 
 

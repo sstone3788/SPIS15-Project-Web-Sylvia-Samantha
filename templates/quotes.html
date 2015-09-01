@@ -1,0 +1,41 @@
+{% extends "games.html" %}
+
+{% block title %}Games{% endblock %}
+
+{% block content %}
+  <h1>Games</h1>
+<p>Guess Yur Mum's favorite movies! Part 2! </p>
+<br>These quotes come from Yur Mum's favorite movies. Can you guess them? <br>
+
+<img src="{{ url_for('static', filename='mum' +mumnum+'.png') }}"> 
+
+<form>
+  <input type="radio" name="movie" value="Hunger Games" > Hunger Games
+  <br>
+  <input type="radio" name="movie" value="Terminator"> Terminator
+<br>
+  <input type="radio" name="movie" value="Star Wars" > Star Wars
+  <br>
+  <input type="radio" name="movie" value="Rugrats"> Rugrats
+<br>
+  <input type="radio" name="movie" value="Toy Story" > Toy Story
+  <br>
+  <input type="radio" name="movie" value="Up"> Up
+<br>
+  <input type="radio" name="movie" value="Wizard of Oz" >Wizard of Oz
+  <br>
+  <input type="radio" name="movie" value="Mean Girls"> Mean Girls
+<br>
+ <input type="radio" name="movie" value="Gladiator" > Gladiator
+  <br>
+  <input type="radio" name="movie" value="The Sixth Sense"> The Sixth Sense
+<br>
+</form> 
+<input type="submit" value= "Mummy Mummy chicken dinner">
+
+
+
+
+
+
+{% endblock %}
