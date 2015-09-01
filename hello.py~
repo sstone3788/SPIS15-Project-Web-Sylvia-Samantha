@@ -74,7 +74,7 @@ def ftocanswer(mumnum):
 @app.route('/randommum')
 def randommum():
 	mumnum= randrange(1, 11)
-	return redirect("/main/"+str(randomum))
+	return redirect("/main/"+(randommum)
 
 
 
