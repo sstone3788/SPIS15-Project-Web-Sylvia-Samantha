@@ -88,15 +88,13 @@ def ftocanswer(mumnum):
 def mtok(mumnum):
 	return render_template('mtok.html', mumnum=mumnum)
 
-<<<<<<< HEAD
 def mtok(miles):
     return (miles*1.609344)
-=======
+    
 @app.route('/randommum')
 def randommum():
 	mumnum= randrange(1, 11)
 	return redirect("/main/"+(randommum)
->>>>>>> b8f0a77c82939fc149133e1fd7aad0ad31a63810
 
 @app.route('/mtokanswer/<mumnum>', methods=["POST"])
 def convertMtoK(mumnum):
