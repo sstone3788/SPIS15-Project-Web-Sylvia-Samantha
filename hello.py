@@ -1,5 +1,9 @@
 
 from flask import Flask, url_for, render_template, request, redirect
+from songlyrics import *
+
+questionNum=0
+
 
 app = Flask(__name__)
 
@@ -32,9 +36,34 @@ def ctof(mumnum):
 def games(mumnum):
 	return render_template('games.html', mumnum=mumnum)
 
+
+
 @app.route('/songs/<mumnum>')
-def songs(mumnum):
-	return render_template('songs.html', mumnum=mumnum)
+def songs(mumnum, questionNum=questionNum):
+	questionLyrics=lyricslist[questionNum]
+	print "insongs", questionNum
+	return render_template('songs.html', mumnum=mumnum, HQLyrics=questionLyrics)
+
+@app.route('/songs/checkanswersong/<mumnum>', methods=['GET', 'POST'])
+def checkAnswerSong(mumnum):
+	global questionNum
+	inputAnswer=request.form['song']
+	print inputAnswer
+	if inputAnswer == lyrics[lyricslist[questionNum]]:
+		asked=lyricsReverse[inputAnswer]
+		questionNum=questionNum+1
+		print "incheckanswersong", questionNum
+		if questionNum<=len(lyricslist):
+			return render_template('correct.html', mumnum=mumnum, nextquestion=lyricslist[questionNum])
+		questionNum=0
+		return render_template('finished.html', mumnum=mumnum)
+
+	return render_template('incorrect.html', mumnum=mumnum, HQLyrics=lyricslist[questionNum])
+
+
+
+
+
 
 @app.route('/movies/<mumnum>')
 def movies(mumnum):
@@ -61,9 +90,9 @@ def ctofanswer(mumnum):
   try:
         ctemp = float(request.form["ctempString"])
         ftemp = ctof(ctemp)
-        message= "In Celcius: " + request.form["ctempString"] + " In Fahrenheit " + str(ftemp) 
-	return render_template('ctofanswer.html' , mumnum=mumnum, message=message)
-  except ValueError: 
+        message= "In Celcius: " + request.form["ctempString"] + " In Fahrenheit " + str(ftemp)
+        return render_template('ctofanswer.html' , mumnum=mumnum, message=message)
+  except ValueError:
 	return render_template('ctofanswer.html' , mumnum=mumnum, message="Sorry, Yur Mum could not convert.")
 
 
@@ -178,7 +207,7 @@ def convertftom (mumnum):
 @app.route('/randommum')
 def randommum():
 	mumnum= randrange(1, 11)
-	return redirect("/main/"+str(randomum))
+	return redirect("/main/"+str(randommum))
 
 
 @app.route('/mtof/<mumnum>')
@@ -212,7 +241,7 @@ def convertmtof (mumnum):
 
 
 if __name__=="__main__":
-    app.run(debug=False,host="0.0.0.0",port=54321)
+    app.run(debug=True,host="0.0.0.0",port=54321)
 
 
 

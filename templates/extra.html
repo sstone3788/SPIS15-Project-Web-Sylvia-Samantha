@@ -30,3 +30,37 @@ def ftocanswer(mumnum):
 #     return "In Farenheit: " + ftempString + " In Celsius " + str(ctemp) 
 }
 </script>
+
+
+function randomPage()
+{
+var link = "";
+var randInt = Math.floor((Math.random()*3)+1);
+switch(randInt) {
+case 1:
+link = "http://www.google.com/";
+break;
+case 2:
+link = "http://www.yahoo.com/";
+break;
+case 3:
+link = "http://www.bing.com/";
+break;
+default:
+alert("Error in randomPage()");
+}
+window.location.href = link;
+}
+</script>
+</head>
+
+<body>
+<button onclick="randomPage()">Random Webpage</button>
+</body>
+</html> 
+
+
+
+<form action="/randommum">
+<input type="submit" value="Random Mum">
+</form>

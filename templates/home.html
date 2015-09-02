@@ -30,28 +30,20 @@
   
 </table>   
 
-
-
-function randomPage()
-{
-var link = "";
-var randInt = Math.floor((Math.random()*3)+1);
-switch(randInt) {
-case 1:
-link = "http://www.google.com/";
-break;
-case 2:
-link = "http://www.yahoo.com/";
-break;
-case 3:
-link = "http://www.bing.com/";
-break;
-default:
-alert("Error in randomPage()");
-}
-window.location.href = link;
-}
+<script type="text/javascript">
+    function randomImg1(){
+        var myImages1 = new Array ();
+        myImages1[1] = "img/who/1.jpg";
+        myImages1[2] = "img/who/2.jpg";
+        myImages1[3] = "img/who/3.jpg";
+        var rnd = Math.floor(Math.random() * myImages1.length);
+        if(rnd == 0{
+            rnd = 1;
+        }
+        document.write(<img class="who" src="'+myImages1[rnd]);
+    }
 </script>
+<input class="randombutton" style="float: left;" type="button" value="Randomize" onclick="randomImg1()"/>
 </head>
 
 <body>

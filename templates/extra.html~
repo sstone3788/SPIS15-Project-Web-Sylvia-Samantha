@@ -20,3 +20,13 @@ def ftocanswer(mumnum):
 <p> Enter Temperature in degrees Farenheit </p>
 <br> <input type="text" name="ftempString"><br>
 <input type="submit" value="submit">
+
+
+
+<script>
+#function myFunction() {
+#    var x = document.getElementById("ftempString").value;
+#    document.getElementById("ftempString").innerHTML = x;
+#     return "In Farenheit: " + ftempString + " In Celsius " + str(ctemp) 
+}
+</script>
