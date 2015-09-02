@@ -1,5 +1,5 @@
 
-from flask import Flask, url_for, render_template, request
+from flask import Flask, url_for, render_template, request, redirect
 
 app = Flask(__name__)
 
@@ -146,6 +146,7 @@ def ktop(mumnum):
 def ktop (kilograms):
     return (kilograms/.45359237)
 
+<<<<<<< HEAD
 @app.route('/ktopanswer/<mumnum>',methods=["POST"]) 
 def convertktop (mumnum):
     kilograms= 0.0
@@ -174,6 +175,12 @@ def convertftom (mumnum):
 	return render_template('ftomanswer.html' , mumnum=mumnum, message=message)
     except ValueError:
 	return render_template('ftomanswer.html' , mumnum=mumnum, message="Yur Mum says *click* or naw ain't finna convert ")
+=======
+@app.route('/randommum')
+def randommum():
+	mumnum= randrange(1, 11)
+	return redirect("/main/"+str(randomum))
+>>>>>>> b8f0a77c82939fc149133e1fd7aad0ad31a63810
 
 @app.route('/mtof/<mumnum>')
 def mtof(mumnum):

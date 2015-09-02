@@ -7,14 +7,33 @@
 <table>
 <tr>
 <td><a href="/welcome/1"> <img src="{{ url_for('static', filename='mum1.png') }}"</a></td>
-<td><a href="/welcome/1"> <img src="{{ url_for('static', filename='mum2.png') }}"</a></td>
-<td><a href="/welcome/1"> <img src="{{ url_for('static', filename='mum3.png') }}"</a></td>
-<td><a href="/welcome/1"> <img src="{{ url_for('static', filename='mum4.png') }}"</a></td>
-<td><a href="/welcome/1"> <img src="{{ url_for('static', filename='mum5.png') }}"</a></td>
-  
-  
+<td><a href="/welcome/2"> <img src="{{ url_for('static', filename='mum2.png') }}"</a></td>
+<td><a href="/welcome/3"> <img src="{{ url_for('static', filename='mum3.png') }}"</a></td>
+<td><a href="/welcome/4"> <img src="{{ url_for('static', filename='mum4.png') }}"</a></td>
+<td><a href="/welcome/5"> <img src="{{ url_for('static', filename='mum5.png') }}"</a></td>
+
 </tr>  
   
 </table>  
+<p>
+
+<table>
+<tr>
+<td><a href="/welcome/6"> <img src="{{ url_for('static', filename='mum6.png') }}"</a></td>
+<td><a href="/welcome/7"> <img src="{{ url_for('static', filename='mum7.png') }}"</a></td>
+<td><a href="/welcome/8"> <img src="{{ url_for('static', filename='mum8.png') }}"</a></td>
+<td><a href="/welcome/9"> <img src="{{ url_for('static', filename='mum9.png') }}"</a></td>
+<td><a href="/welcome/10"> <img src="{{ url_for('static', filename='mum10.png') }}"</a></td>
+</p>
+
+</tr>  
+  
+</table>   
+ 
+<form action="/randommum">
+<input type="submit" value="Random Mum">
+</form>
+ 
+ 
 
 {% endblock %}

@@ -11,10 +11,60 @@
 <td><a href="/welcome/3"> <img src="{{ url_for('static', filename='mum3.png') }}"</a></td>
 <td><a href="/welcome/4"> <img src="{{ url_for('static', filename='mum4.png') }}"</a></td>
 <td><a href="/welcome/5"> <img src="{{ url_for('static', filename='mum5.png') }}"</a></td>
-  
-  
+
 </tr>  
   
 </table>  
+<p>
+
+<table>
+<tr>
+<td><a href="/welcome/6"> <img src="{{ url_for('static', filename='mum6.png') }}"</a></td>
+<td><a href="/welcome/7"> <img src="{{ url_for('static', filename='mum7.png') }}"</a></td>
+<td><a href="/welcome/8"> <img src="{{ url_for('static', filename='mum8.png') }}"</a></td>
+<td><a href="/welcome/9"> <img src="{{ url_for('static', filename='mum9.png') }}"</a></td>
+<td><a href="/welcome/10"> <img src="{{ url_for('static', filename='mum10.png') }}"</a></td>
+</p>
+
+</tr>  
+  
+</table>   
+
+
+
+function randomPage()
+{
+var link = "";
+var randInt = Math.floor((Math.random()*3)+1);
+switch(randInt) {
+case 1:
+link = "http://www.google.com/";
+break;
+case 2:
+link = "http://www.yahoo.com/";
+break;
+case 3:
+link = "http://www.bing.com/";
+break;
+default:
+alert("Error in randomPage()");
+}
+window.location.href = link;
+}
+</script>
+</head>
+
+<body>
+<button onclick="randomPage()">Random Webpage</button>
+</body>
+</html> 
+
+
+
+<form action="/randommum">
+<input type="submit" value="Random Mum">
+</form>
+ 
+ 
 
 {% endblock %}
