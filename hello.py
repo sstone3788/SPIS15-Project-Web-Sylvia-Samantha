@@ -52,6 +52,20 @@ def correct(mumnum):
 def incorrect(mumnum):
 	return render_template('incorrect.html', mumnum=mumnum)
 
+def ctof(ctemp):
+	return (ctemp*(9.0/5.0))+32.0
+
+@app.route('/ctofanswer/<mumnum>', methods=["POST"])
+def ctofanswer(mumnum):
+  ctemp = 0.0
+  try:
+        ctemp = float(request.form["ctempString"])
+        ftemp = ctof(ctemp)
+        message= "In Celcius: " + request.form["ctempString"] + " In Fahrenheit " + str(ftemp) 
+	return render_template('ctofanswer.html' , mumnum=mumnum, message=message)
+  except ValueError: 
+	return render_template('ctofanswer.html' , mumnum=mumnum, message="Sorry, Yur Mum could not convert.")
+
 
 def ftoc(ftemp):
    return (ftemp-32.0)*(5.0/9.0)
@@ -70,11 +84,115 @@ def ftocanswer(mumnum):
         
 	return render_template('ftocanswer.html' , mumnum=mumnum, message="Sorry, Yur Mum could not convert.")
 
+@app.route('/mtok/<mumnum>')
+def mtok(mumnum):
+	return render_template('mtok.html', mumnum=mumnum)
+
+def mtok(miles):
+    return (miles*1.609344)
+
+@app.route('/mtokanswer/<mumnum>', methods=["POST"])
+def convertMtoK(mumnum):
+    miles= 0.0
+    try:
+        miles =float(request.form["milesString"])
+        kilometers = mtok(miles)
+	message= "In Miles: " + request.form["milesString"] + " In Kilometers " + str(kilometers) 
+	return render_template('mtokanswers.html' , mumnum=mumnum, message=message)
+    except ValueError:
+	return render_template('mtokanswers.html' , mumnum=mumnum, message="Yur Mum says Or nahh, could not convert.")
+
+@app.route('/ktom/<mumnum>')
+def ktom(mumnum):
+	return render_template('ktom.html', mumnum=mumnum)
+
+def ktom(kilometers):
+    return (kilometers/1.609344)
+
+@app.route('/ktomanswer/<mumnum>', methods=["POST"])
+def convertKtoM(mumnum):
+    kilometers= 0.0
+    try:
+        kilometers =float(request.form["kilometerString"])
+        miles = ktom(kilometers)
+	message= "In Kilometers: " + request.form["kilometerString"] + " In Miles " + str(miles) 
+	return render_template('ktomanswer.html' , mumnum=mumnum, message=message)
+    except ValueError:
+	return render_template('ktomanswer.html' , mumnum=mumnum, message="Yur Mum says Or nahh, could not convert.")
 
 
+@app.route('/ptok/<mumnum>')
+def ptok(mumnum):
+	return  render_template('ptok.html', mumnum=mumnum)
 
+def ptok (pounds):
+    return (pounds*.45359237)
 
-   
+@app.route('/ptokanswer/<mumnum>',methods=["POST"]) 
+def convertptok (mumnum):
+    pounds= 0.0
+    try:
+        pounds = float(request.form["poundString"])
+        kilograms = ptok(pounds)
+	message= "In Pounds: " + request.form["poundString"] + " In Kilograms " + str(kilograms) 
+	return render_template('ptokanswer.html' , mumnum=mumnum, message=message)
+    except ValueError:
+	return render_template('ptokanswer.html' , mumnum=mumnum, message="Yur Mum says *click* or naw ain't finna convert ")
+
+@app.route('/ktop/<mumnum>')
+def ktop(mumnum):
+	return  render_template('ktop.html', mumnum=mumnum)
+
+def ktop (kilograms):
+    return (kilograms/.45359237)
+
+@app.route('/ktopanswer/<mumnum>',methods=["POST"]) 
+def convertktop (mumnum):
+    kilograms= 0.0
+    try:
+        kilograms = float(request.form["kilogramString"])
+        pounds = ktop(kilograms)
+	message= "In Kilograms: " + request.form["kilogramString"] + " In Pounds " + str(pounds) 
+	return render_template('ktopanswer.html' , mumnum=mumnum, message=message)
+    except ValueError:
+	return render_template('ktopanswer.html' , mumnum=mumnum, message="Yur Mum says *click* or naw ain't finna convert ")
+
+@app.route('/ftom/<mumnum>')
+def ftom(mumnum):
+	return  render_template('ftom.html', mumnum=mumnum)
+
+def ftom (feet):
+    return (feet*0.3048)
+
+@app.route('/ftomanswer/<mumnum>',methods=["POST"]) 
+def convertftom (mumnum):
+    feet= 0.0
+    try:
+        feet = float(request.form["feetString"])
+        meters = ftom(feet)
+	message= "In Feet: " + request.form["feetString"] + " In Meters " + str(meters) 
+	return render_template('ftomanswer.html' , mumnum=mumnum, message=message)
+    except ValueError:
+	return render_template('ftomanswer.html' , mumnum=mumnum, message="Yur Mum says *click* or naw ain't finna convert ")
+
+@app.route('/mtof/<mumnum>')
+def mtof(mumnum):
+	return  render_template('mtof.html', mumnum=mumnum)
+
+def mtof (meters):
+    return (meters/0.3048)
+
+@app.route('/mtofanswer/<mumnum>',methods=["POST"]) 
+def convertmtof (mumnum):
+    meters= 0.0
+    try:
+        meters = float(request.form["meterString"])
+        feet = mtof(meters)
+	message= "In Meters: " + request.form["meterString"] + " In Feet " + str(feet) 
+	return render_template('mtofanswer.html' , mumnum=mumnum, message=message)
+    except ValueError:
+	return render_template('mtofanswer.html' , mumnum=mumnum, message="Yur Mum says *click* or naw ain't finna convert ")
+
 
 
 
@@ -127,33 +245,6 @@ def addnumbers(a, b):
 ####        (a,b) = add(b)
 
 
-def mtok(miles):
-    return (miles*1.609344)
-
-@app.route('/mtok/<milesString>')
-def convertMtoK(milesString):
-    miles= 0.0
-    try:
-        miles =float(milesString)
-        kilometers = mtok(miles)
-        return " In Miles : " + milesString + " In Kilometers : " + str(kilometers)
-    except ValueError:
-        return " ur mum says naaah shorty " + milesString + " ain't gon convert to kilometers ya woe"
-
-    
-
-def ptok (pounds):
-    return (pounds*.45359237)
-
-@app.route('/ptok/<poundsString>') 
-def convertptok (poundsString):
-    pounds= 0.0
-    try:
-        pounds = float(poundsString)
-        kilograms = ptok(pounds)
-        return "In pounds : " + poundsString + " In Kilograms : " + str (kilograms)
-    except ValueError:
-        return " ur mum says *click* or naw ain't finna convert " + poundsString
 
 def askmum(answer):
     return (answer)

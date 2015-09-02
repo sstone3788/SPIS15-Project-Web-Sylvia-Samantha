@@ -8,15 +8,46 @@
 
 <img src="{{ url_for('static', filename='mum' +mumnum+'.png') }}"> 
 
-
+<p>
 <form action="/ftoc/{{ mumnum }}">
 <input type="submit" value="Farenheit to Celcius">
 </form>
-<br>
+
 <form action="/ctof/{{ mumnum }}">
 <input type="submit" value= "Celcius to Farenheit">
 </form>
 
+<br>
+<form action="/mtok/{{ mumnum }}">
+<input type="submit" value= "Miles to Kilometers">
+</form>
+
+
+<form action="/ktom/{{ mumnum }}">
+<input type="submit" value= "Kilometers to Miles">
+</form>
+
+
+<br>
+<form action="/ptok/{{ mumnum }}">
+<input type="submit" value= "Pounds to Kilograms">
+</form>
+
+
+<form action="/ktop/{{ mumnum }}">
+<input type="submit" value= "Kilograms to Pounds">
+</form>
+
+<br>
+<form action="/ftom/{{ mumnum }}">
+<input type="submit" value= "Pounds to Kilograms">
+</form>
+
+
+<form action="/mtof/{{ mumnum }}">
+<input type="submit" value= "Kilograms to Pounds">
+</form>
+</p>
 
 
 
