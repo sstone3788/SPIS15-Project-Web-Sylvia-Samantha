@@ -1,0 +1,10 @@
+quotes = [ ('I volunteer as tribute!' , 'Hunger Games'),
+	   ('I\'ll be back' , 'Terminator'),
+	   ('Luke, I am your father' , 'Star Wars'),
+	   ('A baby\'s gotta do what a baby\'s gotta do' , 'Rugrats'),
+	   ('I\'ve got a snake in my boot!' , 'Toy Story'),
+	   ('Squirrel!' , 'Up'),
+	   ('There\'s no place like home' , 'Wizard of Oz'),
+	   ('On Wednesdays we wear pink' , 'Mean Girls'),
+	   ('Are you not entertained?' , 'Gladiator'),
+	   ('You\'re a wizard, Harry!' , 'Harry Potter and the Sorcerer\'s Stone')]

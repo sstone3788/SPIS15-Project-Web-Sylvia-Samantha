@@ -13,12 +13,8 @@
 <input type="submit" value="Guess the Song">
 </form>
 <br>
-<form action="/movies/{{ mumnum }}">
-<input type="submit" value= "Guess the Movie">
-</form>
-<br>
 <form action="/quotes/{{ mumnum }}">
-<input type="submit" value= "Guess the Movie 2">
+<input type="submit" value= "Guess the Movie">
 </form>
 </p>
 <p>

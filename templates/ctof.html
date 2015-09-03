@@ -3,16 +3,16 @@
 {% block title %}Celcius Converter{% endblock %}
 
 {% block content %}
-  <h1>Celcius Converter</h1>
+  <h1>Celsius Converter</h1>
 <p>Yur Mum can convert </p>
 
 <img src="{{ url_for('static', filename='mum' +mumnum+'.png') }}"> 
 
 
 
-<p> Enter Temperature in degrees Celcius </p>
+<p> Enter Temperature in degrees Celsius </p>
 <form action="/ctofanswer/{{ mumnum }}" method="post"> 
-<input type="number" name="ctempString" value="0">
+<input type="text" name="ctempString" value="0">
 <br>
 <input type="submit" value="Yur Mum's Magic">
 </form> <br>

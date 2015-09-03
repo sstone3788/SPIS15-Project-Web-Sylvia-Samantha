@@ -12,9 +12,12 @@
 
 <p> Enter Temperature in degrees Celcius </p>
 <form action="/ctofanswer/{{ mumnum }}" method="post"> 
-<input type="number" name="ctempString" value="0">
+<input type="text" name="ctempString" value="0">
 <br>
 <input type="submit" value="Yur Mum's Magic">
+</form> <br>
+<form action="/tools/{{ mumnum }}">
+<input type="submit" value="Back to Tools">
 </form>
 
 

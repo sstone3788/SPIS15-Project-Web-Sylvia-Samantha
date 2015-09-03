@@ -1,7 +1,7 @@
 
 from flask import Flask, url_for, render_template, request, redirect
 from songlyrics import *
-
+from moviequotes import *
 
 
 
@@ -35,8 +35,6 @@ def ctof(mumnum):
 @app.route('/games/<mumnum>')
 def games(mumnum):
 	global questionNum
-	global qNum
-	qNum=0
 	questionNum=0
 	return render_template('games.html', mumnum=mumnum)
 
@@ -51,7 +49,6 @@ def songs(mumnum):
 @app.route('/songs/checkanswersong/<mumnum>', methods=['GET', 'POST'])
 def checkAnswerSong(mumnum):
 	global questionNum
-	global qNum
 	inputAnswer=request.form['song']
 	if inputAnswer == lyrics[questionNum][1]:
 		questionNum=questionNum+1
@@ -70,22 +67,22 @@ def movies(mumnum):
 
 @app.route('/quotes/<mumnum>')
 def quotes(mumnum):
-	global qNum
-	qQuotes=quotes[qNum][0]
+	global questionNum
+	qQuotes=quotes[questionNum][0]
 	return render_template('quotes.html', mumnum=mumnum, HQquotes=qQuotes)
 
 @app.route('/quotes/checkanswerquote/<mumnum>', methods=['GET', 'POST'])
 def checkAnswerQuote(mumnum):
-	global qNum
+	global questionNum
 	inputAnswer=request.form['movie']
-	if inputAnswer == quotes[qNum][1]:
-		qNum=qNum+1
-		if qNum<len(quotes):
-			return render_template('correct.html', mumnum=mumnum, nextquestion=quotes[qNum][0])
-		qNum=0
+	if inputAnswer == quotes[questionNum][1]:
+		questionNum=qNum+1
+		if questionNum<len(quotes):
+			return render_template('correct.html', mumnum=mumnum, nextquestion=quotes[questionNum][0])
+		questionNum=0
 		return render_template('finished.html', mumnum=mumnum)
 
-	return render_template('incorrect.html', mumnum=mumnum, HQquotes=quotes[qNum][0])
+	return render_template('incorrect.html', mumnum=mumnum, HQquotes=quotes[questionNum][0])
 
 @app.route('/correct/<mumnum>')
 def correct(mumnum):
@@ -104,7 +101,7 @@ def ctofanswer(mumnum):
   try:
         ctemp = float(request.form["ctempString"])
         ftemp = ctof(ctemp)
-        message= "In Celcius: " + request.form["ctempString"] + " In Fahrenheit " + str(ftemp)
+        message= "In Celsius: " + request.form["ctempString"] + " In Fahrenheit " + str(ftemp)
         return render_template('ctofanswer.html' , mumnum=mumnum, message=message)
   except ValueError:
 	return render_template('ctofanswer.html' , mumnum=mumnum, message="Sorry, Yur Mum could not convert.")
@@ -255,7 +252,7 @@ def convertmtof (mumnum):
 
 
 if __name__=="__main__":
-    app.run(debug=False,host="0.0.0.0",port=54321)
+    app.run(debug=True,host="0.0.0.0",port=54321)
 
 
 

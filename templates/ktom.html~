@@ -17,7 +17,10 @@
 <input type="submit" value="Yur Mum's Magic">
 </form>
 
-
+<br>
+<form action="/tools/{{ mumnum }}">
+<input type="submit" value="Back to Tools">
+</form>
 
 
 
