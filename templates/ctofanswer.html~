@@ -1,9 +1,9 @@
-{% extends "ktop.html" %}
+{% extends "ctof.html" %}
 
-{% block title %}Kilogram Converter{% endblock %}
+{% block title %}Celcius Converter{% endblock %}
 
 {% block content %}
-  <h1>Kilogram Converter</h1>
+  <h1>Celcius Converter</h1>
 <p>Yur Mum can convert </p>
 
 

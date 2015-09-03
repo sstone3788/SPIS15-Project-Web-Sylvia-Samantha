@@ -1,18 +1,18 @@
 {% extends "tools.html" %}
 
-{% block title %}Mile Converter{% endblock %}
+{% block title %}Kilometer Converter{% endblock %}
 
 {% block content %}
-  <h1>Mile Converter</h1>
+  <h1>Kilometer Converter</h1>
 <p>Yur Mum can convert </p>
 
 <img src="{{ url_for('static', filename='mum' +mumnum+'.png') }}"> 
 
 
 
-<p> Enter the amount of Miles  </p>
-<form action="/mtokanswer/{{ mumnum }}" method="post"> 
-<input type="number" name="milesString" value="0">
+<p> Enter the amount of Kilometers  </p>
+<form action="/ktomanswer/{{ mumnum }}" method="post"> 
+<input type="number" name="kilometerString" value="0">
 <br>
 <input type="submit" value="Yur Mum's Magic">
 </form>

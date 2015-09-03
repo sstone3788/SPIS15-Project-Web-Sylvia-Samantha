@@ -1,18 +1,18 @@
 {% extends "tools.html" %}
 
-{% block title %}Kilogram Converter{% endblock %}
+{% block title %}Feet Converter{% endblock %}
 
 {% block content %}
-  <h1>Kilogram Converter</h1>
+  <h1>Feet Converter</h1>
 <p>Yur Mum can convert </p>
 
 <img src="{{ url_for('static', filename='mum' +mumnum+'.png') }}"> 
 
 
 
-<p> Enter the amount of Kilograms  </p>
-<form action="/ktopanswer/{{ mumnum }}" method="post"> 
-<input type="number" name="kilogramString" value="0">
+<p> Enter the amount of Feet  </p>
+<form action="/ftomanswer/{{ mumnum }}" method="post"> 
+<input type="number" name="feetString" value="0">
 <br>
 <input type="submit" value="Yur Mum's Magic">
 </form>

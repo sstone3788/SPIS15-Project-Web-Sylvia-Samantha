@@ -11,10 +11,7 @@
 <img src="{{ url_for('static', filename='mum' +mumnum+'.png') }}">
 <br>
 
-{{ message }} <br>
-<form action="/ftoc/{{ mumnum }}">
-<input type="submit" value="Convert Again">
-</form>
+{{ message }}
 
 
 

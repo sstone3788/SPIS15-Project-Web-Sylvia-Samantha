@@ -43,6 +43,7 @@
         document.write(<img class="who" src="'+myImages1[rnd]);
     }
 </script>
+<input class="randombutton" style="float: left;" type="button" value="Randomize" onclick="randomImg1()"/>
 </head>
 
 <body>

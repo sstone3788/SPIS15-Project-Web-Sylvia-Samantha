@@ -30,33 +30,6 @@
   
 </table>   
 
-<script type="text/javascript">
-    function randomImg1(){
-        var myImages1 = new Array ();
-        myImages1[1] = "img/who/1.jpg";
-        myImages1[2] = "img/who/2.jpg";
-        myImages1[3] = "img/who/3.jpg";
-        var rnd = Math.floor(Math.random() * myImages1.length);
-        if(rnd == 0{
-            rnd = 1;
-        }
-        document.write(<img class="who" src="'+myImages1[rnd]);
-    }
-</script>
-<input class="randombutton" style="float: left;" type="button" value="Randomize" onclick="randomImg1()"/>
-</head>
-
-<body>
-<button onclick="randomPage()">Random Webpage</button>
-</body>
-</html> 
-
-
-
-<form action="/randommum">
-<input type="submit" value="Random Mum">
-</form>
- 
  
 
 {% endblock %}

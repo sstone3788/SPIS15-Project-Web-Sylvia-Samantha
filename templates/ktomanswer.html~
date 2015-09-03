@@ -1,9 +1,9 @@
-{% extends "ftoc.html" %}
+{% extends "ktom.html" %}
 
-{% block title %}Mile Converter{% endblock %}
+{% block title %}Kilometer Converter{% endblock %}
 
 {% block content %}
-  <h1>Mile Converter</h1>
+  <h1>Kilometer Converter</h1>
 <p>Yur Mum can convert </p>
 
 

@@ -40,12 +40,12 @@
 
 <br>
 <form action="/ftom/{{ mumnum }}">
-<input type="submit" value= "Pounds to Kilograms">
+<input type="submit" value= "Feet to Meters">
 </form>
 
 
 <form action="/mtof/{{ mumnum }}">
-<input type="submit" value= "Kilograms to Pounds">
+<input type="submit" value= "Meters to Feet">
 </form>
 </p>
 

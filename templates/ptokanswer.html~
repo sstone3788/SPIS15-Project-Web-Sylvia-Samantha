@@ -1,9 +1,9 @@
-{% extends "ktom.html" %}
+{% extends "ptok.html" %}
 
-{% block title %}Kilometer Converter{% endblock %}
+{% block title %}Pound Converter{% endblock %}
 
 {% block content %}
-  <h1>Kilometer Converter</h1>
+  <h1>Pound Converter</h1>
 <p>Yur Mum can convert </p>
 
 

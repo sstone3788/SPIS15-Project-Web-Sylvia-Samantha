@@ -21,7 +21,7 @@
 </p>
 <p>
 
-<form action="/">
+<form action="/home">
 <input type="submit" value="Return Home">
 </form>
 

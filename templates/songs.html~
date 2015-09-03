@@ -28,7 +28,7 @@
 <br>
   <input type="radio" name="song" value="Living on a prayer" > Living on a prayer
   <br>
-  <input type="radio" name="song" value="Don't stop me now"> Don't stop me now
+  <input type="radio" name="song" value="Don't Stop me Now"> Don't stop me now
 <br>
  <input type="radio" name="song" value="My heart will go on" > My heart will go on
   <br>
