@@ -39,6 +39,9 @@
 <input type="submit" value= "Did Yur Mum really sing to you as a baby?">
 
 </form> 
+<br><form action="/games/{{ mumnum }}">
+<input type="submit" value="Back to Games">
+</form>
 
 
 {% endblock %}
