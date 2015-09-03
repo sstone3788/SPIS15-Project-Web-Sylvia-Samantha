@@ -61,10 +61,7 @@ def checkAnswerSong(mumnum):
 		return render_template('finished.html', mumnum=mumnum)
 
 	return render_template('incorrect.html', mumnum=mumnum, HQLyrics=lyrics[questionNum][0])
-
-
-
-
+ 
 
 
 @app.route('/movies/<mumnum>')
@@ -258,7 +255,7 @@ def convertmtof (mumnum):
 
 
 if __name__=="__main__":
-    app.run(debug=True,host="0.0.0.0",port=54321)
+    app.run(debug=False,host="0.0.0.0",port=54321)
 
 
 

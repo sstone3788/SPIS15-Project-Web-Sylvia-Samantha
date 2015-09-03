@@ -54,7 +54,7 @@ def checkAnswerSong(mumnum):
 	global qNum
 	inputAnswer=request.form['song']
 	if inputAnswer == lyrics[questionNum][1]:
-		questionNum=questionNum
+		questionNum=questionNum+1
 		if questionNum<len(lyrics):
 			return render_template('correct.html', mumnum=mumnum, nextquestion=lyrics[questionNum][0])
 		questionNum=0
@@ -62,9 +62,10 @@ def checkAnswerSong(mumnum):
 
 	return render_template('incorrect.html', mumnum=mumnum, HQLyrics=lyrics[questionNum][0])
 
-
-
-
+@app.route('/songs/displaylyrics<mumnum>')
+def  displaylyrics(mumnum):
+	return songlyrics[0]
+ 
 
 
 @app.route('/movies/<mumnum>')
@@ -258,7 +259,7 @@ def convertmtof (mumnum):
 
 
 if __name__=="__main__":
-    app.run(debug=True,host="0.0.0.0",port=54321)
+    app.run(debug=False,host="0.0.0.0",port=54321)
 
 
 
