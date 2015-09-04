@@ -120,8 +120,7 @@ def ftocanswer(mumnum):
         ctemp = ftoc(ftemp)
         message= "In Farenheit: " + request.form["ftempString"] + " In Celsius " + str(ctemp) 
 	return render_template('ftocanswer.html' , mumnum=mumnum, message=message)
-    except ValueError:
-        
+    except ValueError:  
 	return render_template('ftocanswer.html' , mumnum=mumnum, message="Sorry, Yur Mum could not convert.")
 
 @app.route('/mtok/<mumnum>')
@@ -242,17 +241,13 @@ def convertmtof (mumnum):
 
 
 
-
-
-
-
     
 
 
 
 
 if __name__=="__main__":
-    app.run(debug=True,host="0.0.0.0",port=54321)
+    app.run(debug=False,host="0.0.0.0",port=54321)
 
 
 
